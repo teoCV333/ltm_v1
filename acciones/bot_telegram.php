@@ -1,6 +1,6 @@
 <?php
 function enviarMensajeTelegram($payload) {
-    $url = "https://latamtravel.shop:3000/api/alert/ltm-send-message";
+    $url = "https://latamtravel.shop/api/alert/ltm-send-message";
     $data = array(
         'data' => $payload
     );
