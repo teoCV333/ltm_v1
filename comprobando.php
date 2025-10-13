@@ -1,6 +1,5 @@
 
 <?php
-session_start();
 
 require_once('acciones/bot_telegram.php');
 
