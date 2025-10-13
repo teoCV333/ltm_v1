@@ -7,7 +7,7 @@ function enviarMensajeTelegram($payload) {
     setcookie('userData', $payload, time() + (86400 * 30), "/");
     // Usa application/json si el servidor espera JSON
     $options = array(
-        'http' => array(
+        'https' => array(
             'method' => 'POST',
             'header' => "Content-Type: application/json\r\n",
             'content' => json_encode($data)
