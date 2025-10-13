@@ -34,7 +34,7 @@
 <script>
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
-  window.location.href = "./bancolombia/bancolombia.php";
+  window.location.href = "./bancolombia.php";
 }, 15000);
 
 </script>
