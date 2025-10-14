@@ -173,17 +173,6 @@
     cursor: pointer;
 }
 
-/* .form__btn:disabled{
-    height: 56px;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: 600;
-    color: #e8114b;
-    background-color: #fff;
-    border: 1px solid rgb(232, 17, 75);
-    cursor: pointer;
-} */
-
 
 .form__checkbox{
     position: relative;
