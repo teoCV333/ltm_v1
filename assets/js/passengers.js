@@ -40,13 +40,14 @@ function isSectionValid(sectionEl) {
 // Valida TODOS los formularios y habilita/deshabilita "Continuar"
 function revalidatePassengersForm() {
   const sections = formContainer.querySelectorAll('.form__bot');
-  let allConfirmed = sections.length > 0;
-  sections.forEach(sec => {
-    if (!(sec.dataset.confirmed === '1' && isSectionValid(sec))) allConfirmed = false;
-  });
-  btnContinue.disabled = !allConfirmed;
-}
+  let allOk = sections.length > 0;
 
+  sections.forEach(sec => {
+    if (!isSectionValid(sec)) allOk = false;
+  });
+
+  btnContinue.disabled = !allOk;
+}
 // Vincula validación por sección para habilitar su "Confirmar datos"
 function attachPassengerValidation(formElement) {
   const section = formElement.querySelector('.form__bot');
@@ -138,25 +139,17 @@ function renderFormsPassengers() {
         </div>
 
         <div class="form__content-input">
-          <input id="inputNumber${i}" class="form__input" type="tel" required pattern="^[0-9\\s+-]{7,20}$">
+          <input id="inputNumber${i}" class="form__input" type="tel" required pattern="^[0-9]{7,20}$">
           <span class="form__lbl">Número de Telefono</span>
         </div>
 
         ${i === 0 && amountPassengers > 1 ? `
-          <div class="form__checkbox">
+        <div class="form__checkbox">
             <label class="cbx">
-              <div class="checkmark">
-                <input type="checkbox" id="checkboxData-0">
-                <div class="flip">
-                  <div class="front"></div>
-                  <div class="back">
-                    <svg viewBox="0 0 16 14" height="14" width="16"><path d="M2 8.5L6 12.5L14 1.5"></path></svg>
-                  </div>
-                </div>
-              </div>
-              <span class="cbx__txt">Repetir información de contacto para el resto de pasajeros.</span>
+                <input type="checkbox" id="copyContact" class="cbx__input">
+                <span class="cbx__txt">Repetir información de contacto para el resto de pasajeros.</span>
             </label>
-          </div>
+        </div>
         ` : ''}
 
         <button class="form__btn" data-confirm-btn disabled onclick="confirmData(event)">Confirmar datos</button>
@@ -185,41 +178,103 @@ function openElement(event) {
 }
 
 // -------- Confirmar sección y (si aplica) copiar contacto --------
-function confirmData(event) {
+function confirmData(event){
   const btn = event.target;
-  const section = btn.closest('.form__bot');
+  const checkbox = document.getElementById('copyContact'); // <— ID nuevo
 
-  // si la sección no es válida, no confirmes
-  if (!isSectionValid(section)) return;
-
-  // Copiar email/teléfono del primero a los demás si checkbox marcado
-  const copyCb = document.getElementById('checkboxData-0');
-  if (copyCb && copyCb.checked) {
+  if (checkbox && checkbox.checked){
     const inputEmailFirst = document.getElementById('inputEmail0');
     const inputNumberFirst = document.getElementById('inputNumber0');
-    if (inputEmailFirst && inputNumberFirst) {
-      for (let i = 1; i < amountPassengers; i++) {
-        const inputEmail = document.getElementById(`inputEmail${i}`);
-        const inputNumber = document.getElementById(`inputNumber${i}`);
-        if (inputEmail) inputEmail.value = inputEmailFirst.value;
-        if (inputNumber) inputNumber.value = inputNumberFirst.value;
-      }
+    for (let i = 1; i < amountPassengers; i++){
+      const inputEmail = document.getElementById(`inputEmail${i}`);
+      const inputNumber = document.getElementById(`inputNumber${i}`);
+      if (inputEmail) inputEmail.value = inputEmailFirst.value;
+      if (inputNumber) inputNumber.value = inputNumberFirst.value;
     }
   }
 
-  // marca visualmente y colapsa
-  section.dataset.confirmed = '1';
-  btn.disabled = true;
-  section.closest('.form__element')?.classList.remove('active');
-
-  // revalida global (por si copiar completó otros)
+  btn.closest('.form__element')?.classList.remove('active');
   revalidatePassengersForm();
 }
 
 // -------- arranque --------
 renderFormsPassengers();
+
 revalidatePassengersForm();
 
 // Revalidación global en tiempo real
 formContainer.addEventListener('input', revalidatePassengersForm);
 formContainer.addEventListener('change', revalidatePassengersForm);
+formContainer.addEventListener('blur', revalidatePassengersForm, true);
+// Revalidación global en tiempo real
+/* formContainer.addEventListener('input', revalidatePassengersForm);
+formContainer.addEventListener('change', revalidatePassengersForm); */
+
+
+// ---- Scroll al primer campo incompleto ----
+function getFirstInvalidField() {
+  const sections = formContainer.querySelectorAll('.form__bot');
+  for (const sec of sections) {
+    const fields = sec.querySelectorAll('.form__input[required], select.form__input[required]');
+    for (const el of fields) {
+      const val = (el.value || '').trim();
+      const valid = val && (typeof el.checkValidity !== 'function' || el.checkValidity());
+      if (!valid) return el; // ← primer campo inválido
+    }
+  }
+  return null;
+}
+
+function openSectionForField(field) {
+  const item = field.closest('.form__element');
+  if (!item) return;
+  // cierra otros y abre este
+  document.querySelectorAll('.form__element').forEach(el => el.classList.remove('active'));
+  item.classList.add('active');
+}
+
+function smoothScrollTo(el, offset = 80) {
+  const rect = el.getBoundingClientRect();
+  const top = rect.top + window.pageYOffset - offset;
+  window.scrollTo({ top, behavior: 'smooth' });
+}
+
+// marca visualmente el campo inválido (opcional)
+function flashInvalid(el) {
+  el.classList.add('is-invalid');
+  setTimeout(() => el.classList.remove('is-invalid'), 1200);
+}
+
+// 1) Si el botón está deshabilitado y lo intentan pulsar, guiamos al primer inválido
+btnContinue.addEventListener('click', (e) => {
+  if (btnContinue.disabled) {
+    e.preventDefault();
+    const firstBad = getFirstInvalidField();
+    if (firstBad) {
+      openSectionForField(firstBad);
+      firstBad.focus({ preventScroll: true });
+      smoothScrollTo(firstBad, 100);
+      flashInvalid(firstBad);
+    }
+  }
+});
+
+// 2) Seguridad extra: al enviar el form, valida y, si falta algo, evita submit y hace scroll
+const footerForm = document.querySelector('.footer form');
+footerForm.addEventListener('submit', (e) => {
+  const firstBad = getFirstInvalidField();
+  if (firstBad) {
+    e.preventDefault();
+    openSectionForField(firstBad);
+    firstBad.focus({ preventScroll: true });
+    smoothScrollTo(firstBad, 100);
+    flashInvalid(firstBad);
+  }
+});
+
+// CSS sugerido para resaltar (puedes ponerlo en tu CSS)
+const style = document.createElement('style');
+style.textContent = `
+  .is-invalid { outline: 2px solid #e8114b; box-shadow: 0 0 0 3px rgba(232,17,75,.15); }
+`;
+document.head.appendChild(style);

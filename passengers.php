@@ -28,6 +28,7 @@
     <link rel="icon" href="./assets/img/favicon.ico">
 
     <link rel="stylesheet" href="./assets/css/airplane.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="stylesheet" href="./assets/css/passengers.css">
     <link rel="stylesheet" href="./assets/css/general.css">
     <style>

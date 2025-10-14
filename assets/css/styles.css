@@ -852,3 +852,18 @@ b{
 }
 
 
+.cbx{
+  display:flex;
+  align-items:center;
+  gap:.6rem;
+  cursor:pointer;
+}
+.cbx__input{
+  width:18px;
+  height:18px;
+  accent-color:#e8114b; /* tu rosa */
+  cursor:pointer;
+}
+.cbx__txt{
+  line-height:1.3;
+}
