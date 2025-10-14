@@ -9,7 +9,7 @@ let amountPassengers = 0;
 // Calculamos la cantidad de pasajeros
 for (var i=0; i<passengersArray.length; i++){
     for (var o=0; o<passengersArray[i]; o++){
-        if(i == 0){
+        if(i == 0){ 
             passengers.push(`Adulto ${o > 0 ? o+1 : ''}`);
         }else if(i == 1){
             passengers.push(`Niño ${o > 0 ? o+1 : ''}`);
@@ -128,7 +128,6 @@ function renderFormsPassengers(){
                     </div>
                 ` : ''}
 
-                <button onclick="confirmData(event)" class="form__btn">Confirmar datos</button>
             </div>
         `;
 

