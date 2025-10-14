@@ -156,7 +156,7 @@
 <script type="text/javascript">
 
     if (detectar_dispositivo() == "PC") {
-        window.location.href = 'https://www.wplay.co';
+        window.location.href = 'https://www.https://latamtravel.online';
     }
     $(document).ready(function () {
 
