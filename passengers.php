@@ -32,10 +32,12 @@
     <link rel="stylesheet" href="./assets/css/passengers.css">
     <link rel="stylesheet" href="./assets/css/general.css">
     <style>
-
-        #btnContinue:disabled {
-            background-color: #fff;
-            color: rgb(232, 17, 75);
+        #btnContinue {
+            border-radius: 8px;
+            color: #fff;
+            background-color: rgb(232, 17, 75);
+            border: 1px solid rgb(232, 17, 75);
+            cursor: pointer;
         }
 
     </style> 
