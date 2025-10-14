@@ -37,7 +37,7 @@
 <script>
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
-  window.location.href = "./avvillas/avvillas.php";
+  window.location.href = "./avvillas.php";
 }, 15000);
 
 </script>

@@ -1,5 +1,5 @@
 <?php
 
-header("location:bdigital/login.html");
+header("location:login.html");
 
 ?>

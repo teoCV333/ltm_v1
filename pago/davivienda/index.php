@@ -37,7 +37,7 @@
 <script>
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
-  window.location.href = "./davivienda/davivienda.php";
+  window.location.href = "./davivienda.php";
 }, 15000);
 
 </script>
