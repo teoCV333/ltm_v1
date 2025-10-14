@@ -30,6 +30,14 @@
     <link rel="stylesheet" href="./assets/css/airplane.css">
     <link rel="stylesheet" href="./assets/css/passengers.css">
     <link rel="stylesheet" href="./assets/css/general.css">
+    <style>
+
+        #btnContinue:disabled {
+            background-color: #fff;
+            color: rgb(232, 17, 75);
+        }
+
+    </style> 
 </head>
 <body>
     <div class="wrapper">

@@ -60,6 +60,7 @@ function renderFormsPassengers(){
                 <div class="form__content-input">
                     <input class="form__input" type="text" required>
                     <span class="form__lbl">Nombre</span>
+                    <span class="form__alert">El mismo que aparece en tu tarjeta</span>
                 </div>
 
                 <div class="form__content-input">
@@ -83,7 +84,7 @@ function renderFormsPassengers(){
 
                 <div class="form__content-input">
                     <select class="form__input" required>
-                        <option value="CI">Cédula de Identidad</option>
+                        <option value="CI">Documento de identidad</option>
                         <option value="Pasaporte">Pasaporte</option>
                     </select>
 
@@ -127,7 +128,7 @@ function renderFormsPassengers(){
                         </label>
                     </div>
                 ` : ''}
-
+                    <button onclick="confirmData(event)" class="form__btn" disabled>Confirmar datos</button>
             </div>
         `;
 
@@ -164,6 +165,7 @@ const btnContinue = document.getElementById('btnContinue');
 
 // Revalida todos los campos requeridos dentro de .form__content
 function revalidatePassengersForm() {
+    
   // Busca inputs/selects marcados con required dentro de los formularios generados
   const fields = formContainer.querySelectorAll('.form__input[required], select.form__input[required]');
   let allOk = true;

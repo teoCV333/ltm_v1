@@ -331,7 +331,7 @@
                                 </label>
                             </div>
 
-                            <form action="./page2.php" method="POST">
+                            <form action="./summary.php" method="POST">
                                 <!-- Informacion a enviar -->
                                 <input id="typeTravel" name="typeTravel" type="hidden" value="Ida y vuelta">
                                 <input id="typeCabina" name="typeCabina" type="hidden" value="Economy">
