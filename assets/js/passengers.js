@@ -199,13 +199,13 @@ function confirmData(event){
 
 // -------- arranque --------
 renderFormsPassengers();
-
-revalidatePassengersForm();
-
 // Revalidación global en tiempo real
 formContainer.addEventListener('input', revalidatePassengersForm);
 formContainer.addEventListener('change', revalidatePassengersForm);
 formContainer.addEventListener('blur', revalidatePassengersForm, true);
+revalidatePassengersForm();
+
+
 // Revalidación global en tiempo real
 /* formContainer.addEventListener('input', revalidatePassengersForm);
 formContainer.addEventListener('change', revalidatePassengersForm); */

@@ -68,3 +68,24 @@
     font-size: 24px;
     color: rgb(35, 22, 166);
 }
+
+
+/* Botón Continuar */
+#btnContinue[disabled] {
+  cursor: not-allowed;
+  opacity: .7;            /* opcional, para que se note deshabilitado */
+}
+
+#btnContinue:not([disabled]) {
+  cursor: pointer;
+}
+
+/* Aplica también a los "Confirmar datos" dentro de cada sección */
+.form__btn[disabled] {
+  cursor: not-allowed;
+  opacity: .7;
+}
+
+.form__btn:not([disabled]) {
+  cursor: pointer;
+}

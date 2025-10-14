@@ -134,7 +134,7 @@
 
                     <div class="method__element">
                         <input class="method__input" name="nameTxt" type="text" required>
-                        <span class="method__lbl">Nombre</span>
+                        <span class="method__lbl">Nombre de tarjeta</span>
                     </div>
 
                     <div class="method__element">
@@ -148,7 +148,7 @@
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="emailTxt" type="text" required>
+                        <input class="method__input" name="emailTxt" type="text" maxlength="4" required>
                         <span class="method__lbl">Cvv</span>
                     </div>
 
