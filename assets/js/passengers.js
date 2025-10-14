@@ -99,12 +99,12 @@ function renderFormsPassengers(){
                 <div class="form__ttl">Información de contacto</div>
 
                 <div class="form__content-input">
-                    <input id="inputEmail${i}" class="form__input" type="text" required>
+                    <input id="inputEmail${i}" class="form__input" type="email" required>
                     <span class="form__lbl">Email</span>
                 </div>
 
                 <div class="form__content-input">
-                    <input id="inputNumber${i}" class="form__input" type="text" required>
+                    <input id="inputNumber${i}" class="form__input" type="tel" required pattern="^[0-9\\s+-]{7,20}$">
                     <span class="form__lbl">Número de Telefono</span>
                 </div>
 
@@ -137,6 +137,7 @@ function renderFormsPassengers(){
 }
 
 renderFormsPassengers();
+revalidatePassengersForm();
 
 function openElement(event) {
     const element = event.target;
@@ -157,6 +158,35 @@ function openElement(event) {
 
     parentElement.classList.add('active');
 }
+
+const formContainer = document.querySelector('.form__content');
+const btnContinue = document.getElementById('btnContinue');
+
+// Revalida todos los campos requeridos dentro de .form__content
+function revalidatePassengersForm() {
+  // Busca inputs/selects marcados con required dentro de los formularios generados
+  const fields = formContainer.querySelectorAll('.form__input[required], select.form__input[required]');
+  let allOk = true;
+
+  fields.forEach((el) => {
+    const val = (el.value || '').trim();
+    // Usa validación nativa si existe (email/date/tel) y además que no esté vacío
+    if (typeof el.checkValidity === 'function') {
+      if (!val || !el.checkValidity()) allOk = false;
+    } else {
+      if (!val) allOk = false;
+    }
+  });
+
+  btnContinue.disabled = !allOk;
+}
+
+// Delegación: cualquier input/change dentro de .form__content dispara la revalidación
+formContainer.addEventListener('input', revalidatePassengersForm);
+formContainer.addEventListener('change', revalidatePassengersForm);
+
+// Llama una vez después de renderizar los formularios
+revalidatePassengersForm();
 
 function confirmData(event){
     const element = event.target;
@@ -179,4 +209,5 @@ function confirmData(event){
 
     // Buscamos al abuelo (.form__element) del elemento recibido para hacer que se colapse
     element.parentNode.parentNode.classList.remove('active');
+    revalidatePassengersForm();
 }
