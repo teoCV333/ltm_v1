@@ -70,7 +70,7 @@
                     <input name="destinyDepartureTime" type="hidden" value="<?php echo $destinyDepartureTime ?>">
                     <input name="destinyArrivalTime" type="hidden" value="<?php echo $destinyArrivalTime ?>">
 
-                    <button class="footer__btn" disabled>Continuar</button>
+                    <button id="btnContinue" class="footer__btn" disabled>Continuar</button>
                 </form>
             </footer>
         </div>
