@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Confirmando</title>
+    <title>Confirmando...</title>
     
   <style>
 
@@ -43,7 +43,7 @@
 
 
 <center>
-  <div style="width: 90%;margin-top: 35%;">    
+  <div style="width: 90%;margin-top: 45%;">    
     <div class="spinner-container">
       <div class="spinner"></div>
   </div>
