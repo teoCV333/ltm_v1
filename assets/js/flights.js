@@ -59,8 +59,8 @@ function formatTime(hour, minutes) {
 
 function generateFlightOptions() {
     const flights = [];
-    const minPrice = 49999;
-    const maxPrice = 49999;
+    const minPrice = 59999;
+    const maxPrice = 139999;
     const baseDuration = 77; // 1 hora 17 minutos en minutos
     const numFlights = Math.floor(Math.random() * (10 - 4 + 1)) + 4; // entre 4 y 10 vuelos
     const startHour = 14; // 2:00 p. m.
