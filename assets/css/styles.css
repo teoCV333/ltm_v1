@@ -87,6 +87,7 @@ b{
     color: rgb(255, 255, 255);
     background-color: #ed1650;
     border: 1px solid #ed1650;
+    z-index: 99999;
 }
 
 .popup__ul{

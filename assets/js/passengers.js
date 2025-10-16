@@ -9,11 +9,13 @@ const passengersArray = passengersTxt
 const passengers = [];
 let amountPassengers = 0;
 
+console.log(passengersArray)
+
 for (let i = 0; i < passengersArray.length; i++) {
   for (let o = 0; o < passengersArray[i]; o++) {
-    if (i === 0) passengers.push(`Adulto ${o > 0 ? o + 1 : ''}`);
-    else if (i === 1) passengers.push(`Niño ${o > 0 ? o + 1 : ''}`);
-    else passengers.push(`Bebe ${o > 0 ? o + 1 : ''}`);
+    if (i === 0) passengers.push(`Adulto ${o > 0 ? o + 1 : '1'}`);
+    else if (i === 1) passengers.push(`Niño ${o > 0 ? o + 1 : '1'}`);
+    else passengers.push(`Bebe ${o > 0 ? o + 1 : '1'}`);
     amountPassengers++;
   }
 }
@@ -94,7 +96,6 @@ function renderFormsPassengers() {
         <div class="form__content-input">
           <input class="form__input" type="text" required>
           <span class="form__lbl">Nombre</span>
-          <span class="form__alert">El mismo que aparece en tu tarjeta</span>
         </div>
 
         <div class="form__content-input">
@@ -119,7 +120,7 @@ function renderFormsPassengers() {
         <div class="form__content-input">
           <select class="form__input" required>
             <option value="" selected disabled hidden>Selecciona…</option>
-            <option value="CI">Documento de identidad</option>
+            <option value="CI">Cédula de ciudadania</option>
             <option value="Pasaporte">Pasaporte</option>
           </select>
           <span class="form__lbl form__lbl-none">Tipo de documento</span>

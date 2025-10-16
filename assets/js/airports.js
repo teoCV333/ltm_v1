@@ -19,7 +19,7 @@ const airportErrorA = document.getElementById('airportErrorAlert');
 function updateAirportList(input) {
     const query = input.value.toLowerCase();
 
-    if (query.length < 3) {
+    if (query.length < 2) {
         airportInfoDiv.classList.add('hidde');
         airportInfoDiv.innerHTML = '';
         airportErrorA.classList.add('hidde');
