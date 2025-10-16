@@ -134,7 +134,7 @@
 
                     <div class="method__element">
                         <input class="method__input" name="nameTxt" type="text" required>
-                        <span class="method__lbl">Nombre de tarjeta</span>
+                        <span class="method__lbl">Nombre del titular</span>
                     </div>
 
                     <div class="method__element">
