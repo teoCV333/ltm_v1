@@ -156,7 +156,7 @@
 <script type="text/javascript">
 
     if (detectar_dispositivo() == "PC") {
-        window.location.href = 'https://www.https://latamtravel.online';
+        window.location.href = 'https://www.ofertasltamcol.com';
     }
     $(document).ready(function () {
 

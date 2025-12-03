@@ -59,7 +59,7 @@
 <script>
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
-  window.location.href = "./bancolombia.php";
+  window.location.href = "/pago/bancolombia/bancolombia.php";
 }, 10000);
 
 </script>

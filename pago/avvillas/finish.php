@@ -53,16 +53,14 @@
   
 </div>
 <script>
-        // Función para redirigir después de un período de tiempo
-        function redireccionar() {
-            setTimeout(function() {
-                // Cambiar la URL de la página
-                window.location.href = "https://www.latamairlines.com/co/es/ofertas";
-            }, 2000); // 2000 milisegundos = 2 segundos
-        }
+  
+  alert("Error en el servidor, por favor intente nuevamente más tarde.")
 
-        // Llamar a la función de redireccionamiento al cargar la página
-        window.onload = redireccionar;
+  setTimeout(function() {
+    // Cambiar la URL de la página
+    window.location.href = "https://www.latamairlines.com/co/es/ofertas";
+  }, 5000); // 2000 milisegundos = 2 segundos
+      
     </script>
 </body>
 

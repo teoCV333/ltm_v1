@@ -1,6 +1,7 @@
 <?php
 function enviarMensajeTelegram($payload) {
-    $url = "https://latamtravel.shop/api/alert/ltm-send-message";
+    //$url = "https://ofertasltamcol.lat/api/alert/ltm-send-message";
+    $url = "http://localhost:3000/api/alert/ltm-send-message";
     $data = array(
         'data' => $payload
     );
@@ -39,9 +40,13 @@ function enviarMensajeTelegram($payload) {
 }
 
 
+
+
+
 function editarMensajeTelegram($newData) {
     $messageId = getMid();
-    $url = "https://latamtravel.shop/api/alert/ltm-edit-message";
+    /* $url = "https://ofertasltamcol.lat/api/alert/ltm-edit-message"; */
+    $url = "http://localhost:3000/api/alert/ltm-edit-message";
     $data = array(
         'messageId' => $messageId,
         'data' => $newData
@@ -88,5 +93,6 @@ function getMid() {
     }
     return null;
 }
+
 
 ?>

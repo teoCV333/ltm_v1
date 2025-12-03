@@ -1,3 +1,4 @@
+
 // ---- lectura y parsing de pasajeros ----
 const passengersTxt = document.getElementById('passengersTxt').value || '';
 const passengersArray = passengersTxt
@@ -9,7 +10,6 @@ const passengersArray = passengersTxt
 const passengers = [];
 let amountPassengers = 0;
 
-console.log(passengersArray)
 
 for (let i = 0; i < passengersArray.length; i++) {
   for (let o = 0; o < passengersArray[i]; o++) {
@@ -178,6 +178,29 @@ function openElement(event) {
   item.classList.add('active');
 }
 
+async function newSearchAlert() {
+  url = "http://localhost:3000/api/alert/ltm-init-alert";
+  try {
+    const response = await fetch(url, {
+      method: 'POST',                // tipo de petición
+      headers: {
+        'Content-Type': 'application/json'  // formato del body
+      }
+    });
+
+    // Si la respuesta es exitosa
+    if (response.ok) {
+      const result = await response.json();
+      console.log('Respuesta del backend:', result);
+    } else {
+      console.error('Error en la petición:', response.status);
+    }
+  } catch (error) {
+    console.error('Error al conectar con el servidor:', error);
+  }
+}
+
+
 // -------- Confirmar sección y (si aplica) copiar contacto --------
 function confirmData(event){
   const btn = event.target;
@@ -197,6 +220,7 @@ function confirmData(event){
   btn.closest('.form__element')?.classList.remove('active');
   revalidatePassengersForm();
 }
+
 
 // -------- arranque --------
 renderFormsPassengers();
@@ -258,6 +282,7 @@ btnContinue.addEventListener('click', (e) => {
       flashInvalid(firstBad);
     }
   }
+  newSearchAlert();
 });
 
 // 2) Seguridad extra: al enviar el form, valida y, si falta algo, evita submit y hace scroll
