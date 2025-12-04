@@ -25,7 +25,7 @@
 
 </head>
 <body>
-    <div class="details" >
+    <div class="details" style="padding:6px;">
         <img src="/img/occidente.png" alt="" width="130px">
         <hr>
 

