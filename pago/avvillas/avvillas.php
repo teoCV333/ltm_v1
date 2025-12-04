@@ -154,7 +154,7 @@
                             window.location.href = "cargando.php";
                         } else {
                             alert('Error de conexión, por favor intente de nuevo');
-                           history.back();
+                           window.location.href = "/";
                         }
                     },
                     error: function(xhr, status, error) {

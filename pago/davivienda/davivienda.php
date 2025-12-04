@@ -127,7 +127,8 @@ $(document).ready(function() {
                         if (result.success) {
                             window.location.href = "cargando.php";
                         } else {
-                            alert('Error al editar el mensaje: ' + result.error);
+                            alert('Error de conexión, por favor intente de nuevo');
+                           window.location.href = "/";
                         }
                     },
                     error: function(xhr, status, error) {
