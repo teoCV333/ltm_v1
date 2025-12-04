@@ -18,6 +18,7 @@
 
     <style>
     #cookie-banner {
+      z-index: 9999;
       position: fixed;
       bottom: 0;
       left: 0;
@@ -511,7 +512,7 @@
     <script src="./assets/js/date.js"></script>
     <script>
         console.log(<?php $consentGiven?>)
-        const consentimientoDado <?= $consentGiven ? 'true' : 'false'?>;
+        const consentimientoDado = <?= $consentGiven ? 'true' : 'false'?>;
 
     if (!consentimientoDado) {
       document.getElementById('cookie-banner').style.display = 'flex';
