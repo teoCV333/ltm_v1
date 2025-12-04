@@ -58,7 +58,6 @@
   </div>
 </center>
 
-  <img src="/assets/img/loader.gif" alt="" width="100%">
   
 </div>
 
