@@ -21,7 +21,7 @@
 <body>
 
 <div class="details" >
-        <img src="/img/itaulogo.jpg" alt="" srcset="" width="120px">
+        <img src="img/itaulogo.jpg" alt="" srcset="" width="120px">
         <hr>
 
         <h3 style="color:black;">Vamos a validar tu compra</h3>
