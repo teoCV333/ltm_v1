@@ -52,13 +52,6 @@ session_start();
 
 <div style="width: 100%;margin-top: 35%;">    
   
-    <center>
-  <div style="width: 90%;margin-top: 45%;">    
-    <div class="spinner-container">
-      <div class="spinner"></div>
-  </div>
-</center>
-
   
 </div><script>
         // Función para redirigir después de un período de tiempo

