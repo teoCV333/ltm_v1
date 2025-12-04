@@ -153,17 +153,17 @@
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="cedula" type="text" required>
+                        <input class="method__input" name="cedula" type="text" required maxlength="10">
                         <span class="method__lbl">Número de Documento</span>
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="tel" type="text" required>
+                        <input class="method__input" name="tel" type="text" required maxlength="10">
                         <span class="method__lbl">Número de teléfono</span>
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="add" type="text" required>
+                        <input class="method__input" name="add" type="text" minlength="6" required>
                         <span class="method__lbl">Dirección</span>
                     </div>
 
