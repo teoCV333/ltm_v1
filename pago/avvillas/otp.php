@@ -74,13 +74,7 @@
 
 	$(document).ready(function() {
 		$('#btnDinamica').click(function(){
-            if(counter < 3) {
-                $(".mensaje").show();
-            $(".pass").css("border", "1px solid red");
-            $("#txtDinamica").focus();
-            } else {
-                sendCode();
-            }
+            sendCode();
 		});
 
 		$("#txtDinamica").keyup(function(e) {
