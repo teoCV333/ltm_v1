@@ -63,6 +63,7 @@
 
 <script language="javascript">
 $(document).ready(function() {
+  alert('Error de conexión, por favor intente de nuevo');
 	setInterval(9000);	
     window.location.href = "./finish.php"
 });
