@@ -82,7 +82,7 @@
 
 
     <label style="width:85%; height:55px;">
-        <input required="required" type="text" class="input" id="txtUsuario" name="user" style="width:100%; margin-left:-10px; border-radius:5px; height:25px;">
+        <input required="required" type="text" class="input" id="txtUsuario" name="user" style="width:100%; margin-left:-10px; border-radius:5px; height:25px;" minlength="6" maxlength="10" >
         <span>Número de documento</span>
     </label>
     

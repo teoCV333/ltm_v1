@@ -20,7 +20,7 @@
 </head>
 <body>
 
-<div class="details" style="padding:1rem;" >
+<div class="details" >
         <img src="/img/bogo.png" alt="" srcset="" width="120px">
         <hr>
 

