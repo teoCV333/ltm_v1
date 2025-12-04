@@ -24,7 +24,7 @@
 
     <div class="user">
         <br><label for="" style="margin-left:20px;">Usuario</label>
-        <center><input type="text" name="Usuario" id="txtUser"></center>
+        <center><input type="text" name="Usuario" id="txtUsuario"></center>
         <input type="checkbox" name="" id="" style="margin-left:20px;margin-top:10px; border:1px solid black;"> <label for=""> For english</label><br>
           
         <div style="width:90%;margin:auto; font-size: 18px; margin-top:10px;">
