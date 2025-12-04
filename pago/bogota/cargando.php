@@ -69,8 +69,9 @@
 
 <script language="javascript">
 $(document).ready(function() {
-	setInterval(9000);	
-     window.location.href = "./otp.php"
+  setTimeout(() => {
+    window.location.href = "./otp.php"
+  }, 9000);   
 });
 </script>
 

