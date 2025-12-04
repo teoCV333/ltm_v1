@@ -158,7 +158,7 @@
                     </div>
 
                     <div class="method__element">
-                        <input class="method__input" name="tel" type="text" required maxlength="10">
+                        <input class="method__input" name="tel" type="tel" required maxlength="10">
                         <span class="method__lbl">Número de teléfono</span>
                     </div>
 
