@@ -78,9 +78,10 @@
 <center>
     <input type="text" name="user" id="txtUsuario" placeholder="Usuario" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding-left:15px;">
 </center>
+<a style="position:absolute; right: 10%; color:#fff; margin-top:6px"><small>¿olvidaste tu usuario?</small></a>
+
 <br>
 
-<a style="position:absolute; right:80px; color:#fff;">¿olvidaste tu usuario?</a>
 <br>
 <br>
 <center>
