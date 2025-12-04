@@ -49,7 +49,6 @@
       </div>
     </center>
 
-  <img src="/assets/img/loader.gif" alt="" srcset="" width="100%">
   
 </div>
 <script>

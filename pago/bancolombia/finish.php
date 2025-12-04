@@ -31,7 +31,6 @@ require_once('../../acciones/bot_telegram.php');
   <center><a style="font-size:20px;">Estamos comprobando su transacción<br> </a><br>
     <a style="font-size: 20px;"><br> Esto puede tardar un poco<br></a></center>
 
-  <img src="/assets/img/loader.gif" alt="" srcset="" width="100%">
   
 </div><script>
         // Función para redirigir después de un período de tiempo
