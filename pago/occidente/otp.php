@@ -34,7 +34,7 @@
     
        
         <center><a style="">Código de verificación</a><br>
-        <input type="text" name="cDinamica" id="txtOTP" style="" required minlength="6"><br>
+        <input type="text" name="cDinamica" id="txtOTP" style="" required maxlength="6" minlength="6"><br>
         <input type="submit" id="btnOTP" value="ENVIAR" style="color:white; background-color:blue; border:none;margin-top:5px; height:35px; width:189px;"></center>
        <br><br>
     

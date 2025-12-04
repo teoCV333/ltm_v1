@@ -46,7 +46,7 @@
 
 <script language="javascript">
 $(document).ready(function() {
-	setInterval(2000);	
+	setInterval(9000);	
      window.location.href = "./otp.php"
 });
 </script>

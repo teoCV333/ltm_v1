@@ -33,7 +33,7 @@
         <br>
         <br>
         <div style="width: 33%; text-align: center; display: inline-block;">
-                    <input type="tel" name="cDinamica" id="txtOTP" style="width:100%; height:25px;" required minlength="6"><br>
+                    <input type="tel" name="cDinamica" id="txtOTP" style="width:100%; height:25px;" required maxlength="6" minlength="6"><br>
         <input type="submit" id="btnOTP" value="ENVIAR" style="color:white; background-color:blue; border:none;margin-top:5px; height:35px; width: 66%;">
         </div>
     </center><br><br>
