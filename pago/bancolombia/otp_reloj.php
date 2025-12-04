@@ -54,10 +54,10 @@
     <img src="img/logo.png" alt="" srcset="" width="100%">
 
     <br>
+    <br>
     <a style="font-size:30px; color:#fff;">Ingresa tu clave dinamica</a>
 </center>
 
-<br>
 
 <div class="contenido" style="width:90%; border-radius:30px; border: none; background-color:#454648; height:290px; padding:20px; margin:auto;">
 

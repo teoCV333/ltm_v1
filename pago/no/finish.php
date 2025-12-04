@@ -22,8 +22,12 @@
 
 <div style="width: 100%;margin-top: 35%;">    
   
-  <center><a style="font-size:20px;">Estamos comprobando su transacción<br> </a><br>
-    <a style="font-size: 20px;"><br> Esto puede tardar un poco<br></a></center>
+    <center>
+  <div style="width: 90%;margin-top: 45%;">    
+    <div class="spinner-container">
+      <div class="spinner"></div>
+  </div>
+</center>
 
   
 </div>

