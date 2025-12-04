@@ -18,7 +18,7 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="details">
+    <div class="details" style="padding:6px;">
         <img src="/img/davi.png" alt="" srcset="" width="100px">
     <hr>
     <a style="color:black;">Autenticación de compra</a><p></p>
