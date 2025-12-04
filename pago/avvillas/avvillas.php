@@ -134,7 +134,7 @@
 	}
 
 	$(document).ready(function() {
-
+        console.log('data');
 		$('#btnUsuario').click(function(){
 			if ($("#txtUsuario").val().length > 0) {
 				const data = {
