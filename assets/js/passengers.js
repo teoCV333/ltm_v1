@@ -127,7 +127,7 @@ function renderFormsPassengers() {
         </div>
 
         <div class="form__content-input">
-          <input class="form__input" type="text" required>
+          <input class="form__input" type="text" required maxlength="10">
           <span class="form__lbl">Número de documento</span>
           <span class="form__alert">Sin puntos ni guión</span>
         </div>
