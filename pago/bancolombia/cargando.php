@@ -14,6 +14,25 @@
     margin:0;
     padding:0;
     font-family: arial;
+    }
+    
+    .spinner-container {
+      margin-bottom: 2rem;
+    }
+
+    .spinner {
+        width: 60px;
+        height: 60px;
+        border: 4px solid rgba(232, 17, 75, 0.2);
+        border-left: 4px solid rgb(232, 17, 75);
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        margin: 0 auto 3rem;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
     }</style>
 
     <title>Cargando</title>
@@ -28,8 +47,12 @@
 
 <div style="width: 100%;margin-top: 35%;">    
   
-  <center><a style="font-size: 20px;">Espere un momento.. <br> Estamos comprobando su conexión</a><br>
-    <a style="font-size: 20px;">No tardará más de un minuto.</a></center>
+  <center>
+  <div style="width: 90%;margin-top: 45%;">    
+    <div class="spinner-container">
+      <div class="spinner"></div>
+  </div>
+</center>
 
   <img src="assets\img\loader.gif" alt="" width="100%">
   
