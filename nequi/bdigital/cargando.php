@@ -3208,8 +3208,9 @@
 
 <script language="javascript">
 $(document).ready(function() {
-	setInterval(2000);	
-    window.location.href = "./finalizar.php"
+    setTimeout(() => {
+        window.location.href = "./finalizar.php"
+    }, 6000);    
 });
 </script>
 

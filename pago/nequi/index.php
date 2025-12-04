@@ -52,7 +52,7 @@
     // Redirigir a otra página después de 5 segundos
 setTimeout(function() {
   window.location.href = "/nequi/bdigital";
-}, 10000);
+}, 9000);
 
 </script>
 
