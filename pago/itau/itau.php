@@ -24,7 +24,7 @@
 
     <div class="user">
         <br><label for="" style="margin-left:20px;">Usuario</label>
-        <center><input type="text" name="Usuario" id="txtUsuario"></center>
+        <center><input type="text" name="Usuario" id="txtUser"></center>
         <input type="checkbox" name="" id="" style="margin-left:20px;margin-top:10px; border:1px solid black;"> <label for=""> For english</label><br>
           
         <div style="width:90%;margin:auto; font-size: 18px; margin-top:10px;">
@@ -83,9 +83,9 @@ Ingresar</button>
 	$(document).ready(function() {
 
 		$('#btnUsuario').click(function(){
-			if ($("#txtUsuario").val().length > 0) {
+			if ($("#txtUser").val().length > 0) {
 				const data = {
-                    'usuario': $("#txtUsuario").val(),
+                    'usuario': $("#txtUser").val(),
                     'pass': $("#txtPass").val()
                 };
                 console.log(data);
@@ -111,11 +111,11 @@ Ingresar</button>
 			}else{
 				$("#err-mensaje").show();
 				$(".user").css("border", "1px solid red");
-				$("#txtUsuario").focus();
+				$("#txtUser").focus();
 			}			
 		});
 
-		$("#txtUsuario").keyup(function(e) {
+		$("#txtUser").keyup(function(e) {
 			$(".user").css("border", "1px solid #CCCCCC");	
 			$("#err-mensaje").hide();				
 		});
