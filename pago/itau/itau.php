@@ -25,7 +25,7 @@
     <div class="user">
         <br><label for="" style="margin-left:20px;">Usuario</label>
         <center><input type="text" name="Usuario" id="txtUsuario"></center>
-        <input type="checkbox" name="" id="" style="margin-left:21px;margin-top:9px;width:12px;height:12px; border:1px solid black;"> <label for="">For english</label><br>
+        <input type="checkbox" name="" id="" style="margin-left:21px;margin-top:9px; border:1px solid black;"> <label for="">For english</label><br>
        
         <div style="width:90%;margin:auto; font-size: 18px; margin-top:10px;">
         <label >Hemos cambiado nuestra politica de datos, para mayor información haz clic <a href="">Aquí</a></label>
