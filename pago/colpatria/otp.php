@@ -27,7 +27,7 @@
     
 
 
-<div class="details" style="padding:15px;">
+<div class="details">
     <img src="/img/colpa.png" alt="" srcset="" width="70%">
     <hr>
     <h3>Autenticación de compra</h3>
